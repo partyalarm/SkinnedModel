@@ -1,7 +1,7 @@
 ﻿using Assimp;
 using Microsoft.Xna.Framework;
 
-namespace DopaEngine
+namespace SkinnedModel
 {
     class AssimpHelper
     {

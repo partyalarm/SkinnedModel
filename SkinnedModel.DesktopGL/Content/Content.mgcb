@@ -1,0 +1,66 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ../../SkinnedModel/Content/hk_mp5n.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../SkinnedModel/Content/hk_mp5n.jpg;hk_mp5n.jpg
+
+#begin ../../SkinnedModel/Content/mp5.3DS
+/copy:../../SkinnedModel/Content/mp5.3DS;mp5.3DS
+
+#begin ../../SkinnedModel/Content/Rifle Idle.dae
+/copy:../../SkinnedModel/Content/Rifle Idle.dae;Rifle Idle.dae
+
+#begin ../../SkinnedModel/Content/Rifle Run.dae
+/copy:../../SkinnedModel/Content/Rifle Run.dae;Rifle Run.dae
+
+#begin ../../SkinnedModel/Content/Rifle Walking.dae
+/copy:../../SkinnedModel/Content/Rifle Walking.dae;Rifle Walking.dae
+
+#begin ../../SkinnedModel/Content/SimpleModelEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../SkinnedModel/Content/SimpleModelEffect.fx;SimpleModelEffect.fx
+
+#begin ../../SkinnedModel/Content/SkinnedModelEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../SkinnedModel/Content/SkinnedModelEffect.fx;SkinnedModelEffect.fx
+
+#begin ../../SkinnedModel/Content/Soldier.fbx
+/copy:../../SkinnedModel/Content/Soldier.fbx;Soldier.fbx
+
+#begin ../../SkinnedModel/Content/swat.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../SkinnedModel/Content/swat.jpg;swat.jpg
+

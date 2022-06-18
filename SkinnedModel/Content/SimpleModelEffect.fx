@@ -9,12 +9,10 @@
 
 matrix World;
 matrix WorldViewProjection;
-float3 CameraPos;
-
 float3 SunOrientation;
-float Texture1Level;
+
 Texture2D Texture1;
-sampler TextureSampler1 = sampler_state
+sampler Sampler1 = sampler_state
 {
     Texture = <Texture1>;
 };
@@ -46,10 +44,12 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-	float cosTheta = clamp((dot( input.Normal, SunOrientation) / 2) + 0.5, 0, 1);
-	float4 textureColor = (tex2D(TextureSampler1, input.Uv) * 1);// +(input.Color * (1 - Texture1Level)) * cosTheta;
-	textureColor.a = 1;
-	return textureColor;
+	float cosTheta = clamp((dot( input.Normal, SunOrientation) *0.5) + 0.5, 0, 1);
+	float4 albedo = tex2D(Sampler1, input.Uv);
+	float4 result = albedo * cosTheta;
+	result.a = 1;
+	return result;
+
 }
 
 technique BasicColorDrawing

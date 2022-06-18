@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace DopaEngine
+namespace SkinnedModel
 {
     public struct SimpleModelVertex : IVertexType
     {

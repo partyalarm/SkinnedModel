@@ -1,8 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.IO;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace DopaEngine
+namespace SkinnedModel
 {
     /// <summary>
     /// This is the main type for your game.
@@ -54,26 +56,26 @@ namespace DopaEngine
 
             CharacterMesh = new SkinnedModel();
             CharacterMesh.GraphicsDevice = GraphicsDevice;
-            CharacterMesh.FilePath = @"Content\Soldier.fbx";
+            CharacterMesh.FilePath = Path.Combine("Content", "Soldier.fbx");
             CharacterMesh.Initialize();
             CharacterMesh.Meshes[0].Texture = Content.Load<Texture2D>("swat");
 
             AnimationIdle = new SkinnedModelAnimation();
-            AnimationIdle.FilePath = @"Content\Rifle Idle.dae";
+            AnimationIdle.FilePath = Path.Combine("Content", "Rifle Idle.dae");
             AnimationIdle.Load();
 
             AnimationRunning = new SkinnedModelAnimation();
-            AnimationRunning.FilePath = @"Content\Rifle Run.dae";
+            AnimationRunning.FilePath = Path.Combine("Content", "Rifle Run.dae");
             AnimationRunning.Load();
 
             AnimationWalk = new SkinnedModelAnimation();
-            AnimationWalk.FilePath = @"Content\Rifle Walking.dae";
+            AnimationWalk.FilePath = Path.Combine("Content", "Rifle Walking.dae");
             AnimationWalk.Load();
             
 
             ModelRifle = new SimpleModel();
             ModelRifle.GraphicsDevice = GraphicsDevice;
-            ModelRifle.FilePath = @"Content\mp5.3ds";
+            ModelRifle.FilePath = Path.Combine("Content", "mp5.3ds");
             ModelRifle.Initialize();
 
             ModelInstance = new SkinnedModelInstance();
