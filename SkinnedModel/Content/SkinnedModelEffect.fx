@@ -58,7 +58,7 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 
 	
 	output.Position = mul(skinnedPosition, WorldViewProjection);
-	output.Normal = mul(input.Normal, World);
+	output.Normal = mul( float4(input.Normal, 0), World).xyz;
 	output.Uv = input.Uv;
 
 	return output;
@@ -66,7 +66,7 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-	float cosTheta = clamp(dot( input.Normal, SunOrientation) + 1, 0, 1);
+	float cosTheta = clamp((dot( input.Normal, SunOrientation) *0.5) + 0.5, 0, 1);
 	float4 albedo = tex2D(Sampler1, input.Uv);
 	float4 result = albedo * cosTheta;
 	result.a = 1;

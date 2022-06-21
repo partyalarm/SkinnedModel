@@ -36,7 +36,7 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 	VertexShaderOutput output = (VertexShaderOutput)0;
 
 	output.Position = mul(input.Position, WorldViewProjection);
-	output.Normal = mul(input.Normal, World);
+	output.Normal = mul( float4(input.Normal,0), World).xyz;
 	output.Uv = input.Uv;
 
 	return output;
